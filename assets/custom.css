@@ -1,6 +1,9 @@
-html,
-body {
+html {
   overflow-x: clip !important;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 p {
@@ -263,7 +266,7 @@ p {
   }
 }
 
-.product__info-container {
+.product__info-container:not(.product__column-sticky) {
   position: relative;
 }
 
