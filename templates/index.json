@@ -515,6 +515,15 @@
             "author": "Aria C.",
             "product": "ravello-blanket-box"
           }
+        },
+        "testimonial_biyJMx": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "Feels really sturdy and looks so stylish.\n\nThis is a really solid piece of furniture. The material feels durable and it's well put together. You can tell it's going to last. Would buy from here again.",
+            "author": "Scarlett U.",
+            "product": "chicago-luxvelvet-3-seater"
+          }
         }
       },
       "block_order": [
@@ -536,7 +545,8 @@
         "testimonial_fy9mQ7",
         "testimonial_XjXfJJ",
         "testimonial_QqdaNd",
-        "testimonial_CNkwqi"
+        "testimonial_CNkwqi",
+        "testimonial_biyJMx"
       ],
       "name": "Testimonial Slider",
       "settings": {
