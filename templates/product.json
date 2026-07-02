@@ -383,7 +383,7 @@
         "judge_me_reviews_testimonials_carousel_f8qetP": {
           "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "show_sample_reviews": true,
+            "show_sample_reviews": false,
             "reviews_selection": "all",
             "products": [],
             "star_rating": "all",
@@ -398,7 +398,7 @@
             "max_width": 1100,
             "corner_styling": "soft",
             "quote_marks_style": "serif",
-            "card_color": "#F9F9F9",
+            "card_color": "#f9f9f9",
             "stars_and_quote_marks_color": "#108474",
             "text_color": "#000000",
             "arrows_color": "#000000",
@@ -415,103 +415,29 @@
       "block_order": [
         "judge_me_reviews_testimonials_carousel_f8qetP"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
     },
-    "testimonials_FqAwzT": {
-      "type": "testimonials",
+    "1782996821fe9fdf61": {
+      "type": "apps",
       "blocks": {
-        "testimonial_767mcf": {
-          "type": "testimonial",
+        "judge_me_reviews_review_widget_XWDbxN": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "best-capsule-2000-box-top-mattress"
-          }
-        },
-        "testimonial_KtBW7D": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "cabin-bed-mattress"
-          }
-        },
-        "testimonial_jhwEbi": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "best-capsule-essentials-mattress"
-          }
-        },
-        "testimonial_9yqi4A": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
-          }
-        },
-        "testimonial_CFLGaC": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
-          }
-        },
-        "testimonial_cnj6A4": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
-          }
-        },
-        "testimonial_NaxwHn": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
       "block_order": [
-        "testimonial_767mcf",
-        "testimonial_KtBW7D",
-        "testimonial_jhwEbi",
-        "testimonial_9yqi4A",
-        "testimonial_CFLGaC",
-        "testimonial_cnj6A4",
-        "testimonial_NaxwHn"
+        "judge_me_reviews_review_widget_XWDbxN"
       ],
-      "disabled": true,
-      "name": "Testimonial Slider",
       "settings": {
-        "color_scheme": "",
-        "card_color_scheme": "scheme-c2c81d76-e413-4b43-bf13-d2f10cb3fa41",
-        "heading": "What our customers say",
-        "btn_text": "View All",
-        "btn_link": "",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "enable_autoplay": false,
-        "autoplay_interval": 3,
-        "desktop_slides": 4,
-        "desktop_spacing": 12,
-        "tablet_slides": 3.2,
-        "mobile_slides": 1.1,
-        "mobile_spacing": 10
+        "include_margins": true
       }
     },
     "related-products": {
@@ -990,7 +916,7 @@
     "usps_marquee_nNja7V",
     "why_choose_us_kQm6Yp",
     "1782990317a1fed2e6",
-    "testimonials_FqAwzT",
+    "1782996821fe9fdf61",
     "related-products",
     "call_to_action_banner_TdeHWD",
     "newsletter_pPWpWW",
