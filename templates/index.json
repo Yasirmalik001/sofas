@@ -411,10 +411,37 @@
         "testimonial_iLi3wq": {
           "type": "testimonial",
           "settings": {
-            "stars": 4,
+            "stars": 5,
             "content": "This is my second purchase from this store and the quality is just as good as the first time. I knew I could trust them for a big item like a bed. The ottoman storage is a game-changer, so much space in there. The headboard is really plush and comfortable to lean against. It feels like a proper hotel bed! The whole thing is really sturdy. Can't fault it.",
             "author": "Aurora I.",
             "product": "chicago-luxvelvet-32-seater"
+          }
+        },
+        "testimonial_EakgYg": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "I saw this on an interior design Instagram account and fell in love. It's just as beautiful in real life. The craftsmanship is excellent, from the frame to the upholstery. It arrived on the day they said it would, and the delivery process was seamless. It was easy to assemble the legs and it looks absolutely stunning. I've already passed the website details on to my sister.",
+            "author": "Henry U.",
+            "product": "byron-corner-sofa"
+          }
+        },
+        "testimonial_NdLfCT": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "This is my second purchase from this store and the quality is just as good as the first time. I knew I could trust them for a big item like a bed. The ottoman storage is a game-changer, so much space in there. The headboard is really plush and comfortable to lean against. It feels like a proper hotel bed! The whole thing is really sturdy. Can't fault it.",
+            "author": "Lucas P.",
+            "product": "best-capsule-3000-pillow-top-mattress"
+          }
+        },
+        "testimonial_biJpwQ": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "3 settee and 2 settee great comfy happy with the colour great choice same about the drver getting wrong address said it dead end but yeah got it delivered",
+            "author": "Nicole Grey",
+            "product": "dino-32-seater"
           }
         }
       },
@@ -426,7 +453,10 @@
         "testimonial_CFLGaC",
         "testimonial_cnj6A4",
         "testimonial_NaxwHn",
-        "testimonial_iLi3wq"
+        "testimonial_iLi3wq",
+        "testimonial_EakgYg",
+        "testimonial_NdLfCT",
+        "testimonial_biJpwQ"
       ],
       "name": "Testimonial Slider",
       "settings": {
