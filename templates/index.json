@@ -372,6 +372,15 @@
             "product": "chicago-luxvelvet-swivel-chair-footstoll"
           }
         },
+        "testimonial_Y3ggPR": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "Top-notch quality and surprisingly quick turnaround. We needed a replacement for our old family sofa and didn't have the luxury of waiting months for a custom build. This arrived within 10 days of ordering. The stitching is perfect and the material feels like it will actually stand up to kids and pets. My only tiny gripe was the delivery slot was very early in the morning, but given the speed and the build quality of the furniture, I really can't complain. It's rare to find a company that actually delivers on its 'fast delivery' promises!",
+            "author": "Ellie",
+            "product": "oakland-corner-sofa"
+          }
+        },
         "testimonial_9yqi4A": {
           "type": "testimonial",
           "settings": {
@@ -443,12 +452,40 @@
             "author": "Nicole Grey",
             "product": "dino-32-seater"
           }
+        },
+        "testimonial_rTbw8M": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "TOP QUALITY SOFA! Our sofa was so great, and really cheap for what it is ! I was a bit hesitant first but when our sofa arrived it couldn't believe it! Really pleased!",
+            "author": "Kayla",
+            "product": "verona-full-back-corner-sofa"
+          }
+        },
+        "testimonial_Y3eAFJ": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "I ordered this sofa and was very pleased! It looks much better in person and is very comfortable and they're pricing is very cheap compare to others!",
+            "author": "John",
+            "product": "garrison-plush-velvet-corner-sofa-copy"
+          }
+        },
+        "testimonial_C4HfWg": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "Absolutely delighted with my new corner sofa. I’d been looking for a specific velvet finish and most places were quoting months for delivery, but this arrived in just under a week. You can really tell the difference in the frame quality—it feels solid and well-built, not like some of the flimsy flat-pack options out there. The delivery drivers were also a credit to the company; they were punctual, polite, and even took the packaging away with them. Five-star service from start to finish!",
+            "author": "Liz",
+            "product": "chicago-luxvelvet-corner-sofa"
+          }
         }
       },
       "block_order": [
         "testimonial_767mcf",
         "testimonial_KtBW7D",
         "testimonial_jhwEbi",
+        "testimonial_Y3ggPR",
         "testimonial_9yqi4A",
         "testimonial_CFLGaC",
         "testimonial_cnj6A4",
@@ -456,7 +493,10 @@
         "testimonial_iLi3wq",
         "testimonial_EakgYg",
         "testimonial_NdLfCT",
-        "testimonial_biJpwQ"
+        "testimonial_biJpwQ",
+        "testimonial_rTbw8M",
+        "testimonial_Y3eAFJ",
+        "testimonial_C4HfWg"
       ],
       "name": "Testimonial Slider",
       "settings": {
