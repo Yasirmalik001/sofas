@@ -394,18 +394,27 @@
           "type": "testimonial",
           "settings": {
             "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
+            "content": "Finally!\n\nLove.",
+            "author": "Tyler R.",
+            "product": "chicago-crushed-velvet-3-seater"
           }
         },
         "testimonial_NaxwHn": {
           "type": "testimonial",
           "settings": {
-            "stars": 5,
-            "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference.",
-            "author": "Anna H.",
-            "product": "chicago-crushed-velvet-corner-sofa"
+            "stars": 4,
+            "content": "Looks just like it does on the website, which is always a relief! The delivery guys were great, brought it right into the room for me.",
+            "author": "Zoey S.",
+            "product": "fullerton-bed"
+          }
+        },
+        "testimonial_iLi3wq": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 4,
+            "content": "This is my second purchase from this store and the quality is just as good as the first time. I knew I could trust them for a big item like a bed. The ottoman storage is a game-changer, so much space in there. The headboard is really plush and comfortable to lean against. It feels like a proper hotel bed! The whole thing is really sturdy. Can't fault it.",
+            "author": "Aurora I.",
+            "product": "chicago-luxvelvet-32-seater"
           }
         }
       },
@@ -416,7 +425,8 @@
         "testimonial_9yqi4A",
         "testimonial_CFLGaC",
         "testimonial_cnj6A4",
-        "testimonial_NaxwHn"
+        "testimonial_NaxwHn",
+        "testimonial_iLi3wq"
       ],
       "name": "Testimonial Slider",
       "settings": {
