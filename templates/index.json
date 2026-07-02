@@ -363,15 +363,6 @@
             "product": "garrison-corner"
           }
         },
-        "testimonial_jhwEbi": {
-          "type": "testimonial",
-          "settings": {
-            "stars": 5,
-            "content": "We're doing up our house and this was one of the first big purchases. It's completely set the tone for the living room. The quality is top-notch, feels really solid and well-made, not like some of the flimsy stuff you see elsewhere. It's also way more comfortable than I thought it would be - perfect for movie nights. The measurements were spot on too, fits the alcove perfectly. So, so happy.",
-            "author": "Michael F.",
-            "product": "chicago-luxvelvet-swivel-chair-footstoll"
-          }
-        },
         "testimonial_Y3ggPR": {
           "type": "testimonial",
           "settings": {
@@ -529,7 +520,6 @@
       "block_order": [
         "testimonial_767mcf",
         "testimonial_KtBW7D",
-        "testimonial_jhwEbi",
         "testimonial_Y3ggPR",
         "testimonial_9yqi4A",
         "testimonial_CFLGaC",
