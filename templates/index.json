@@ -479,6 +479,42 @@
             "author": "Liz",
             "product": "chicago-luxvelvet-corner-sofa"
           }
+        },
+        "testimonial_fy9mQ7": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "I was a bit nervous about ordering a sofa online without trying it first, but I needed something quickly after moving into my new flat. I’m so impressed! The delivery was incredibly fast—ordered on Tuesday and it was in my living room by Friday morning. The quality is much better than the 'big name' high street brands I’ve had before; the fabric feels durable and the cushions are firm but supportive. Great communication from the delivery team too. Highly recommend if you don't want to wait 12 weeks for a sofa!",
+            "author": "Joanne",
+            "product": "oakland-corner-sofa"
+          }
+        },
+        "testimonial_XjXfJJ": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "Stunning\n\nSo pleased with this. The fabric is softer than I expected and it looks so much more expensive than it was.",
+            "author": "Benjamin A.",
+            "product": "oakland-2-seater"
+          }
+        },
+        "testimonial_QqdaNd": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "Completely changed the vibe of my living room.\n\nWe searched for *months* to find the perfect corner sofa that wasn't ridiculously expensive. Stumbled across this site and took a chance. It paid off! The pictures are good, but it's even nicer in reality. The velvet is so soft and the colour is gorgeous and rich. The delivery guys were legends, super friendly and careful. The whole process was smooth. If you're on the fence, just go for it.",
+            "author": "Isla F.",
+            "product": "capsule-orthopaedic-mattress"
+          }
+        },
+        "testimonial_CNkwqi": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "content": "I'm over the moon with this purchase.\n\nHad this for a month now and I love it more every day. It's the new favourite spot for everyone in the house, including the cat.",
+            "author": "Aria C.",
+            "product": "ravello-blanket-box"
+          }
         }
       },
       "block_order": [
@@ -496,7 +532,11 @@
         "testimonial_biJpwQ",
         "testimonial_rTbw8M",
         "testimonial_Y3eAFJ",
-        "testimonial_C4HfWg"
+        "testimonial_C4HfWg",
+        "testimonial_fy9mQ7",
+        "testimonial_XjXfJJ",
+        "testimonial_QqdaNd",
+        "testimonial_CNkwqi"
       ],
       "name": "Testimonial Slider",
       "settings": {
