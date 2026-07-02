@@ -17,6 +17,11 @@ product-info {
 
 .product__media-wrapper {
   padding-left: 0;
+  display: block;
+  position: sticky;
+  top: 3rem;
+  z-index: 2;
+  align-self: start;
 }
 
 @media screen and (min-width: 990px) {
