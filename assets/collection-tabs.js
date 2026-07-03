@@ -236,6 +236,11 @@
         // 2. Update price
         var priceContainer = card.querySelector('[data-card-price-container]');
         if (priceContainer) {
+          var stripZeros = function (formatted) {
+            return typeof formatted === 'string' ? formatted.replace(/\.00(\D|$)/, '$1') : formatted;
+          };
+          var priceFormatted = stripZeros(matchedVariant.price_formatted);
+          var compareFormatted = stripZeros(matchedVariant.compare_at_price_formatted);
           var priceHtml = '';
           if (matchedVariant.compare_at_price && matchedVariant.compare_at_price > matchedVariant.price) {
             priceHtml =
@@ -243,8 +248,8 @@
                 '<div class="price__container">' +
                   '<div class="price__sale">' +
                     '<span class="visually-hidden">Regular price</span>' +
-                    '<s class="price-item price-item--regular">' + matchedVariant.compare_at_price_formatted + '</s>' +
-                    '<span class="price-item price-item--sale price-item--last">' + matchedVariant.price_formatted + '</span>' +
+                    '<s class="price-item price-item--regular">' + compareFormatted + '</s>' +
+                    '<span class="price-item price-item--sale price-item--last">' + priceFormatted + '</span>' +
                   '</div>' +
                 '</div>' +
               '</div>';
@@ -253,7 +258,7 @@
               '<div class="price">' +
                 '<div class="price__container">' +
                   '<div class="price__regular">' +
-                    '<span class="price-item price-item--regular">' + matchedVariant.price_formatted + '</span>' +
+                    '<span class="price-item price-item--regular">' + priceFormatted + '</span>' +
                   '</div>' +
                 '</div>' +
               '</div>';
