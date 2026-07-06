@@ -188,9 +188,10 @@
           </span>
         {%- endif -%}
 
-        {%- if card_product.metafields.custom.bestseller.value == true -%}
+        {%- assign bestseller_label = card_product.metafields.custom.bestseller | strip -%}
+        {%- if bestseller_label != blank -%}
           <span class="card-product-tabs__badge card-product-tabs__badge--{{ badge_position | default: 'top-right' }} card-product-tabs__badge--bestseller" data-card-bestseller>
-            {{ card_product.metafields.custom.bestseller_label | default: 'Bestseller' }}
+            {{ bestseller_label }}
           </span>
         {%- endif -%}
       </a>
