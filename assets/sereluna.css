@@ -644,7 +644,7 @@ slider-container:hover .slider-template-controls--middle .slider-template-arrow.
    -------------------------------------------------------------------------- */
 .multi-icon-row {
     display: flex;
-    gap: 0;
+    gap: 10px;
     justify-content: space-between;
     align-items: stretch;
     background-color: #f1f1f1;
@@ -660,7 +660,7 @@ slider-container:hover .slider-template-controls--middle .slider-template-arrow.
     gap: 16px;
     text-align: left;
     position: relative;
-    padding: 0 16px;
+    /* padding: 0 16px; */
 }
 
 /* Vertical dividers */

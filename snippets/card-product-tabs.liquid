@@ -187,6 +187,12 @@
             {{ badge_label }}
           </span>
         {%- endif -%}
+
+        {%- if card_product.metafields.custom.bestseller.value == true -%}
+          <span class="card-product-tabs__badge card-product-tabs__badge--{{ badge_position | default: 'top-right' }} card-product-tabs__badge--bestseller" data-card-bestseller>
+            {{ card_product.metafields.custom.bestseller_label | default: 'Bestseller' }}
+          </span>
+        {%- endif -%}
       </a>
 
       {%- comment -%} Quick Add (Dawn standard/bulk) — kept for backwards compat {%- endcomment -%}

@@ -399,6 +399,27 @@
   color: #ffffff;
 }
 
+/* Bestseller tag — sits just below the discount badge, same pill design */
+.card-product-tabs__badge--bestseller {
+  background: #CBAE8F;
+  color: #ffffff;
+}
+
+.card-product-tabs__badge--bestseller.card-product-tabs__badge--top-right {
+  top: 56px;
+  right: 12px;
+}
+
+.card-product-tabs__badge--bestseller.card-product-tabs__badge--top-left {
+  top: 56px;
+  left: 12px;
+}
+
+/* If no discount/other badge is present, pull the bestseller tag up to the top */
+.card-product-tabs__media:not(:has([data-card-badge])) .card-product-tabs__badge--bestseller {
+  top: 12px;
+}
+
 .card-product-tabs__cart-btn {
   position: absolute;
   z-index: 3;
