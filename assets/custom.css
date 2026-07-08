@@ -288,8 +288,8 @@ p {
 .cx-promo-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
 }
 
 .cx-promo-item {
@@ -329,15 +329,9 @@ p {
   text-align: center;
 }
 
-/* Right Banner Styles */
+/* Right Banner — hidden per updated Figma (single-row mega menu) */
 .cx-promo-banner {
-  width: 42%;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: 100%;
+  display: none;
 }
 
 .cx-promo-bg {
