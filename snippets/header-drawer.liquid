@@ -236,6 +236,11 @@ line-height: 100%;
 letter-spacing: 0%;
 text-align: center;
 color: #2B2B2B;
+display: block;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
   }
 
   /* ============================================
@@ -343,7 +348,9 @@ color: #2B2B2B;
   /* ============================================
      SUB-MENU BANNER — white text, timer, solid CTA
      ============================================ */
+  /* Sub promo banner hidden per updated Figma (mobile drawer) */
   .woc-drawer-promo--sub {
+    display: none;
     min-height: 240px;
   }
 
