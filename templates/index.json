@@ -12,46 +12,6 @@
     "custom_hero_slider_44VNmc": {
       "type": "custom-hero-slider",
       "blocks": {
-        "slide_npzN6m": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/image_1_3.png",
-            "mobile_image": "shopify://shop_images/image_1_2.png",
-            "overlay_opacity": 30,
-            "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
-            "desktop_content_position": "center",
-            "desktop_text_alignment": "center",
-            "heading": "<p>Premium sofas without the wait.</p>",
-            "heading_size": "h1",
-            "text": "<p>Skip the 8–12 week delays. Get UK-made comfort delivered in just 7–10 days.</p>",
-            "button_label_1": "Get your comfort sofa now!",
-            "button_link_1": "shopify://collections",
-            "button_style_1": "primary",
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_2": "secondary"
-          }
-        },
-        "slide_YcYXPY": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
-            "mobile_image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
-            "overlay_opacity": 30,
-            "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
-            "desktop_content_position": "center",
-            "desktop_text_alignment": "center",
-            "heading": "<p>Premium sofas without the wait.</p>",
-            "heading_size": "h1",
-            "text": "<p>Skip the 8–12 week delays. Get UK-made comfort delivered in just 7–10 days.</p>",
-            "button_label_1": "Get your comfort sofa now!",
-            "button_link_1": "shopify://collections",
-            "button_style_1": "primary",
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_2": "secondary"
-          }
-        },
         "slide_UnRRHJ": {
           "type": "slide",
           "settings": {
@@ -71,12 +31,52 @@
             "button_link_2": "",
             "button_style_2": "secondary"
           }
+        },
+        "slide_npzN6m": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/image_1_3.png",
+            "mobile_image": "shopify://shop_images/image_1_2.png",
+            "overlay_opacity": 30,
+            "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
+            "desktop_content_position": "center",
+            "desktop_text_alignment": "center",
+            "heading": "<p>Hitting Snooze Never Looked So Good</p>",
+            "heading_size": "h1",
+            "text": "<p>Handcrafted from sustainably sourced solid oak and premium fabrics for a lifetime of luxury.</p>",
+            "button_label_1": "Get your comfort sofa now!",
+            "button_link_1": "shopify://collections",
+            "button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "secondary"
+          }
+        },
+        "slide_YcYXPY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
+            "mobile_image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
+            "overlay_opacity": 30,
+            "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
+            "desktop_content_position": "center",
+            "desktop_text_alignment": "center",
+            "heading": "<p>Put your feet up and keep the clutter out of sight with our premium multi-tasking living pieces.</p>",
+            "heading_size": "h1",
+            "text": "<p>Shop our handcrafted storage boxes and footstools, designed for everyday ease.</p>",
+            "button_label_1": "Get your comfort sofa now!",
+            "button_link_1": "shopify://collections",
+            "button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "secondary"
+          }
         }
       },
       "block_order": [
+        "slide_UnRRHJ",
         "slide_npzN6m",
-        "slide_YcYXPY",
-        "slide_UnRRHJ"
+        "slide_YcYXPY"
       ],
       "name": "Custom Hero Slider",
       "settings": {
