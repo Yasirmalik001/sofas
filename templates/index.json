@@ -87,7 +87,7 @@
         "desktop_dots": true,
         "mobile_dots": true,
         "adapt_height_first_image": false,
-        "desktop_height": 70,
+        "desktop_height": 80,
         "mobile_height": 60,
         "padding_top": 0,
         "padding_bottom": 0
