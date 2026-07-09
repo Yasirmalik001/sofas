@@ -1,18 +1,22 @@
 (function () {
   'use strict';
 
-  function isProtectedImage(target) {
-    return target instanceof HTMLImageElement || target.closest('picture');
+  var IMAGE_ZONE_SELECTOR =
+    'img, picture, .card-product-tabs__media, .product__media, .product__media-wrapper, swiper-gallery, media-gallery, .product-media-container';
+
+  function isInImageZone(target) {
+    if (!(target instanceof Element)) return false;
+    return Boolean(target.closest(IMAGE_ZONE_SELECTOR));
   }
 
   document.addEventListener('contextmenu', function (event) {
-    if (isProtectedImage(event.target)) {
+    if (isInImageZone(event.target)) {
       event.preventDefault();
     }
   });
 
   document.addEventListener('dragstart', function (event) {
-    if (isProtectedImage(event.target)) {
+    if (isInImageZone(event.target)) {
       event.preventDefault();
     }
   });
