@@ -58,7 +58,7 @@
         "infinite": "infinite",
         "infinite_btn": false,
         "infinite_progressbar": false,
-        "image_ratio": "square",
+        "image_ratio": "landscape",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,

@@ -323,7 +323,7 @@
   overflow: hidden;
   border-radius: var(--ct-card-radius, 16px);
   background: var(--ct-image-bg, #f6f4ee);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: var(--ct-aspect-ratio, 1.333);
 }
 
 .card-product-tabs__media-inner {
