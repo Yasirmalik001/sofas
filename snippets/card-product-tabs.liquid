@@ -31,8 +31,6 @@
     assign ratio = 0.8
   elsif media_aspect_ratio == 'square'
     assign ratio = 1
-  elsif media_aspect_ratio == 'landscape'
-    assign ratio = 1.333
   elsif media_aspect_ratio == 'adapt' and card_product.featured_media
     assign ratio = card_product.featured_media.aspect_ratio
   endif
@@ -94,7 +92,6 @@
       <a
         href="{{ card_product.url }}"
         class="card-product-tabs__media"
-        style="--ct-aspect-ratio: {{ ratio }};"
         aria-label="{{ card_product.title | escape }}"
         data-card-media-link
       >

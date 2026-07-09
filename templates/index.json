@@ -268,11 +268,7 @@
         "autoplay_interval": 3,
         "enable_loop": false,
         "quick_add": "bulk",
-<<<<<<< Updated upstream
-        "image_ratio": "adapt",
-=======
         "image_ratio": "square",
->>>>>>> Stashed changes
         "show_secondary_image": true,
         "badge_position": "top-right",
         "show_rating": true,
