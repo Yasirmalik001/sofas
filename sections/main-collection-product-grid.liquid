@@ -162,25 +162,42 @@
         .grid-view-toggles {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
         }
         .grid-view-toggle {
-          background: none;
+          background: transparent;
           border: none;
-          padding: 5px;
+          padding: 6px;
+          border-radius: 6px;
           cursor: pointer;
-          color: rgb(var(--color-foreground));
+          color: #d4d4d4;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: opacity 0.3s ease;
-          opacity: 0.5;
+          transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
         }
-        .grid-view-toggle:hover {
-          opacity: 0.7;
+        .grid-view-toggle svg rect {
+          transition: fill 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .grid-view-toggle:hover:not(.active) {
+          color: #b8b8b8;
         }
         .grid-view-toggle.active {
-          opacity: 1;
+          color: #2b2b2b;
+          background-color: rgba(43, 43, 43, 0.08);
+        }
+        .grid-view-toggle:active {
+          transform: scale(0.94);
+        }
+        @media screen and (min-width: 990px) {
+          #product-grid.product-grid .grid__item {
+            transition:
+              width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          #product-grid.product-grid.is-grid-transitioning .card-product-tabs {
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+          }
         }
         @media screen and (max-width: 768px) {
            .collection-toolbar {
@@ -205,30 +222,30 @@
         <div class="collection-toolbar__controls">
           <div class="grid-view-toggles small-hide">
             <button type="button" class="grid-view-toggle js-grid-toggle" data-col="3" aria-label="3 columns">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none">
-            <rect width="8" height="22" fill="#E3E3E3"/>
-            <rect x="9" width="8" height="22" fill="#E3E3E3"/>
-            <rect x="18" width="8" height="22" fill="#E3E3E3"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true">
+            <rect width="8" height="22" fill="currentColor"/>
+            <rect x="9" width="8" height="22" fill="currentColor"/>
+            <rect x="18" width="8" height="22" fill="currentColor"/>
             </svg>
             </button>
             <button type="button" class="grid-view-toggle js-grid-toggle active" data-col="4" aria-label="4 columns">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <rect width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="5.86621" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="11.7334" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="17.5996" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect y="5.86667" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="5.86621" y="5.86667" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="11.7334" y="5.86667" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="17.5996" y="5.86667" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect y="11.7333" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="5.86621" y="11.7333" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="11.7334" y="11.7333" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="17.5996" y="11.7333" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect y="17.6" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="5.86621" y="17.6" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="11.7334" y="17.6" width="4.4" height="4.4" fill="#E7E1D8"/>
-            <rect x="17.5996" y="17.6" width="4.4" height="4.4" fill="#E7E1D8"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="5.86621" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="11.7334" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="17.5996" width="4.4" height="4.4" fill="currentColor"/>
+            <rect y="5.86667" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="5.86621" y="5.86667" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="11.7334" y="5.86667" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="17.5996" y="5.86667" width="4.4" height="4.4" fill="currentColor"/>
+            <rect y="11.7333" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="5.86621" y="11.7333" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="11.7334" y="11.7333" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="17.5996" y="11.7333" width="4.4" height="4.4" fill="currentColor"/>
+            <rect y="17.6" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="5.86621" y="17.6" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="11.7334" y="17.6" width="4.4" height="4.4" fill="currentColor"/>
+            <rect x="17.5996" y="17.6" width="4.4" height="4.4" fill="currentColor"/>
             </svg>
             </button>
           </div>
@@ -555,25 +572,55 @@
   document.addEventListener('DOMContentLoaded', function() {
     const gridToggles = document.querySelectorAll('.js-grid-toggle');
     const productGrid = document.getElementById('product-grid');
+    const storageKey = 'collection-grid-columns';
+
+    function setGridColumns(columns, toggle) {
+      if (!productGrid || !columns) return;
+
+      productGrid.classList.add('is-grid-transitioning');
+
+      gridToggles.forEach(function (btn) {
+        btn.classList.toggle('active', btn === toggle);
+      });
+
+      Array.from(productGrid.classList).forEach(function (className) {
+        if (className.startsWith('grid--') && className.endsWith('-col-desktop')) {
+          productGrid.classList.remove(className);
+        }
+      });
+
+      productGrid.classList.add('grid--' + columns + '-col-desktop');
+
+      try {
+        localStorage.setItem(storageKey, columns);
+      } catch (e) {
+        /* noop */
+      }
+
+      window.setTimeout(function () {
+        productGrid.classList.remove('is-grid-transitioning');
+      }, 480);
+    }
 
     if (gridToggles.length && productGrid) {
-      gridToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-          const columns = this.getAttribute('data-col');
-          
-          // Update active state
-          gridToggles.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          
-          // Remove existing desktop column classes
-          productGrid.classList.forEach(className => {
-            if (className.startsWith('grid--') && className.endsWith('-col-desktop')) {
-              productGrid.classList.remove(className);
-            }
-          });
-          
-          // Add new desktop column class
-          productGrid.classList.add(`grid--${columns}-col-desktop`);
+      var savedColumns = null;
+      try {
+        savedColumns = localStorage.getItem(storageKey);
+      } catch (e) {
+        /* noop */
+      }
+
+      if (savedColumns) {
+        var savedToggle = document.querySelector('.js-grid-toggle[data-col="' + savedColumns + '"]');
+        if (savedToggle) {
+          setGridColumns(savedColumns, savedToggle);
+        }
+      }
+
+      gridToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function () {
+          if (this.classList.contains('active')) return;
+          setGridColumns(this.getAttribute('data-col'), this);
         });
       });
     }
