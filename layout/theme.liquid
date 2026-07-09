@@ -288,6 +288,7 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'premium-button-hover.css' | asset_url | stylesheet_tag }}
     {{ 'component-judgeme.css' | asset_url | stylesheet_tag }}
+    {{ 'image-protection.css' | asset_url | stylesheet_tag }}
     {{ 'predictive-search.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -416,6 +417,7 @@
     <script src="{{'WI_quickAdd.js' | asset_url}}" defer="defer"></script>
     {% comment %} end card-product-1 {% endcomment %}
     <script src="{{ 'judgeme-refresh.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'image-protection.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
