@@ -307,6 +307,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   background: transparent;
 }
 
@@ -323,7 +324,8 @@
   overflow: hidden;
   border-radius: var(--ct-card-radius, 16px);
   background: var(--ct-image-bg, #f6f4ee);
-  aspect-ratio: var(--ct-aspect-ratio, 1.333);
+  aspect-ratio: var(--ct-aspect-ratio, 1);
+  flex-shrink: 0;
 }
 
 .card-product-tabs__media-inner {
@@ -332,15 +334,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 14px;
 }
 
 .card-product-tabs__image {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  mix-blend-mode: darken;
+  object-position: center;
   transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
@@ -479,6 +483,7 @@
 .card-product-tabs__content {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 3.4px;
   padding: 12px 2px 0;
 }
@@ -904,4 +909,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Collection grid — equal card heights, aligned text rows */
+.product-grid .grid__item,
+.collection-tabs .swiper-slide {
+  display: flex;
+}
+
+.product-grid .grid__item > .card-product-tabs,
+.collection-tabs .swiper-slide > .card-product-tabs {
+  width: 100%;
 }

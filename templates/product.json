@@ -510,7 +510,7 @@
         "enable_autoplay": false,
         "autoplay_interval": 3,
         "enable_loop": false,
-        "image_ratio": "landscape",
+        "image_ratio": "square",
         "show_secondary_image": true,
         "badge_position": "top-left",
         "show_rating": true,
