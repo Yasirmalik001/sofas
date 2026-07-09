@@ -1,10 +1,7 @@
-/* Discourage saving/copying product images — links and clicks still work */
+/* Block save/drag on every image site-wide */
 img,
-picture img,
-.card-product-tabs__image,
-.product__media img,
-.swiper-gallery-main img,
-.swiper-gallery-thumbs img {
+picture,
+picture img {
   -webkit-user-drag: none;
   user-drag: none;
   -webkit-user-select: none;
