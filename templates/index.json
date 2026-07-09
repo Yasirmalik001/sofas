@@ -86,7 +86,7 @@
         "mobile_arrows": false,
         "desktop_dots": true,
         "mobile_dots": true,
-        "adapt_height_first_image": false,
+        "adapt_height_first_image": true,
         "desktop_height": 70,
         "mobile_height": 60,
         "padding_top": 0,
