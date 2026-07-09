@@ -18,10 +18,7 @@ product-info {
 .product__media-wrapper {
   padding-left: 0;
   display: block;
-  position: sticky;
-  top: 3rem;
-  z-index: 2;
-  align-self: start;
+  position: static;
 }
 
 @media screen and (min-width: 990px) {
@@ -31,6 +28,14 @@ product-info {
     top: 8rem;
     z-index: 2;
   }
+.product__media-wrapper {
+  padding-left: 0;
+  display: block;
+  position: sticky;
+  top: 3rem;
+  z-index: 2;
+  align-self: start;
+}
 
   .product--thumbnail .thumbnail-list {
     padding-right: var(--media-shadow-horizontal-offset);
