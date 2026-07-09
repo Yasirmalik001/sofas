@@ -268,7 +268,7 @@
         "autoplay_interval": 3,
         "enable_loop": false,
         "quick_add": "bulk",
-        "image_ratio": "landscape",
+        "image_ratio": "adapt",
         "show_secondary_image": true,
         "badge_position": "top-right",
         "show_rating": true,
