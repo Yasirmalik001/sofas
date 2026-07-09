@@ -87,7 +87,7 @@
         "desktop_dots": true,
         "mobile_dots": true,
         "adapt_height_first_image": false,
-        "desktop_height": 90,
+        "desktop_height": 80,
         "mobile_height": 60,
         "padding_top": 0,
         "padding_bottom": 0
@@ -191,8 +191,8 @@
       "settings": {
         "color_scheme": "scheme-c2c81d76-e413-4b43-bf13-d2f10cb3fa41",
         "icon_size": 40,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "collections_tabs_CftkD8": {
