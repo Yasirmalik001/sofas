@@ -7,44 +7,79 @@
 
   .announcement-timer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 0;
+    gap: 0.5rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem 0;
     text-align: center;
+    box-sizing: border-box;
   }
 
   @media screen and (min-width: 750px) {
     .announcement-timer {
-      justify-content: center;
+      flex-wrap: nowrap;
       padding: 0.8rem 0;
       gap: 2rem;
     }
   }
 
-.announcement-timer__message {
+  .announcement-timer__message {
     margin: 0;
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
     color: rgb(var(--color-foreground));
-    white-space: nowrap;
+    white-space: normal;
     font-weight: 600;
-}
+    line-height: 1.35;
+    max-width: 100%;
+  }
 
   .countdown-timer-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 22px;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0.4rem;
+    font-size: 18px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.6px;
     line-height: 1;
     color: rgb(var(--color-foreground));
   }
 
+  @media screen and (max-width: 389px) {
+    .announcement-timer {
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 0.7rem 0;
+    }
+
+    .announcement-timer__message {
+      font-size: 1.1rem;
+      letter-spacing: 0.03rem;
+    }
+
+    .countdown-timer-wrapper {
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      gap: 0.3rem;
+    }
+  }
+
   @media screen and (min-width: 750px) {
+    .announcement-timer__message {
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      white-space: nowrap;
+    }
+
     .countdown-timer-wrapper {
       font-size: 26px;
+      letter-spacing: 1.5px;
+      gap: 0.5rem;
     }
   }
 

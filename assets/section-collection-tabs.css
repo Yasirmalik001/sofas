@@ -877,48 +877,6 @@
     height: calc(var(--ct-icon-size, 32px) * 0.8);
   }
 
-  .card-product-tabs__image {
-    object-fit: contain;
-    mix-blend-mode: normal;
-  }
-
-  .card-product-tabs__badge {
-    top: auto;
-    padding: 4px 9px;
-    font-size: 10px;
-    border-radius: 4px;
-    max-width: calc(50% - 28px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .card-product-tabs__badge--top-right,
-  .card-product-tabs__badge--top-left {
-    bottom: 8px;
-    top: auto;
-  }
-
-  .card-product-tabs__badge[data-card-badge] {
-    left: 8px;
-    right: auto;
-  }
-
-  .card-product-tabs__badge[data-card-bestseller] {
-    left: auto;
-    right: 48px;
-  }
-
-  .card-product-tabs__badge--bestseller.card-product-tabs__badge--top-right,
-  .card-product-tabs__badge--bestseller.card-product-tabs__badge--top-left {
-    top: auto;
-  }
-
-  .card-product-tabs__media:not(:has([data-card-badge])) .card-product-tabs__badge--bestseller {
-    top: auto;
-    left: 8px;
-    right: auto;
-  }
-
   .card-product-tabs__cart-btn {
     width: 36px;
     height: 36px;
