@@ -532,6 +532,13 @@
   font-size: 13px;
 }
 
+.card-product-tabs__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
+}
+
 .card-product-tabs__price .price {
   display: inline-flex;
   align-items: baseline;
@@ -550,6 +557,15 @@
   color: rgba(31, 31, 31, 0.45);
   text-decoration: line-through;
   font-weight: 400;
+}
+
+.card-product-tabs__sale-label {
+  display: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1f1f1f;
+  white-space: nowrap;
 }
 
 .card-product-tabs__swatches {
@@ -875,6 +891,19 @@
   .collection-tabs__tab-icon {
     width: calc(var(--ct-icon-size, 32px) * 0.8);
     height: calc(var(--ct-icon-size, 32px) * 0.8);
+  }
+
+  .card-product-tabs__badge--sale[data-card-badge] {
+    display: none;
+  }
+
+  .card-product-tabs__badge--bestseller.card-product-tabs__badge--top-right,
+  .card-product-tabs__badge--bestseller.card-product-tabs__badge--top-left {
+    top: 12px;
+  }
+
+  .card-product-tabs__sale-label {
+    display: inline;
   }
 
   .card-product-tabs__cart-btn {

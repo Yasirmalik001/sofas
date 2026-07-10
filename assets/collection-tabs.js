@@ -264,6 +264,21 @@
               '</div>';
           }
           priceContainer.innerHTML = priceHtml;
+
+          var saleLabel = priceContainer.querySelector('[data-card-sale-label]');
+          if (matchedVariant.compare_at_price && matchedVariant.compare_at_price > matchedVariant.price && matchedVariant.available) {
+            var savedPctLabel = Math.round((matchedVariant.compare_at_price - matchedVariant.price) / matchedVariant.compare_at_price * 100);
+            if (!saleLabel) {
+              saleLabel = document.createElement('span');
+              saleLabel.className = 'card-product-tabs__sale-label';
+              saleLabel.setAttribute('data-card-sale-label', '');
+              priceContainer.appendChild(saleLabel);
+            }
+            saleLabel.textContent = savedPctLabel + '% OFF';
+            saleLabel.style.display = '';
+          } else if (saleLabel) {
+            saleLabel.remove();
+          }
         }
 
         // 3. Update badge

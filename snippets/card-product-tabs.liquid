@@ -170,14 +170,17 @@
         {%- liquid
           assign badge_label = ''
           assign badge_modifier = ''
+          assign saved_percent = ''
+          if card_product.compare_at_price > card_product.price and card_product.available
+            assign saved_percent = card_product.compare_at_price | minus: card_product.price | times: 100 | divided_by: card_product.compare_at_price
+          endif
           if card_product.metafields.custom.badge != blank
             assign badge_label = card_product.metafields.custom.badge
             assign badge_modifier = 'card-product-tabs__badge--custom'
           elsif card_product.available == false
             assign badge_label = 'products.product.sold_out' | t
             assign badge_modifier = 'card-product-tabs__badge--soldout'
-          elsif card_product.compare_at_price > card_product.price and card_product.available
-            assign saved_percent = card_product.compare_at_price | minus: card_product.price | times: 100 | divided_by: card_product.compare_at_price
+          elsif saved_percent != blank
             assign badge_label = saved_percent | append: '% OFF'
             assign badge_modifier = 'card-product-tabs__badge--sale'
           elsif card_product.created_at and card_product.tags contains 'new'
@@ -288,6 +291,9 @@
 
         <div class="card-product-tabs__price" data-card-price-container>
           {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+          {%- if saved_percent != blank -%}
+            <span class="card-product-tabs__sale-label" data-card-sale-label>{{ saved_percent }}% OFF</span>
+          {%- endif -%}
         </div>
 
         {%- if size_option and size_option.values.size > 0 -%}
