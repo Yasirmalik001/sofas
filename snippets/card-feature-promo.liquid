@@ -44,8 +44,35 @@
   align-items: center; /* Center contents */
 }
 
-.promo-content-{{ block.id }} .h1 { margin: 0; line-height: 100%; }
-.promo-text-{{ block.id }} { font-size: 14px; line-height: 1.5; margin: 0; color: inherit; }
+.promo-content-{{ block.id }} .h1 { 
+  margin: 0; 
+  line-height: 100%; 
+  paint-order: stroke fill;
+  -webkit-text-stroke: 1.5px #ffffff;
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 6px rgba(255, 255, 255, 0.95),
+     0px 0px 14px rgba(255, 255, 255, 0.85);
+}
+.promo-text-{{ block.id }} { 
+  font-size: 14px; 
+  line-height: 1.5; 
+  margin: 0; 
+  color: inherit; 
+  font-weight: 600;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 1.2px #ffffff;
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 6px rgba(255, 255, 255, 0.95),
+     0px 0px 12px rgba(255, 255, 255, 0.85);
+}
 
 .promo-features-{{ block.id }} { 
   display: flex; 
@@ -64,25 +91,36 @@
   gap: 10px; 
   font-size: 14px; 
   color: inherit; 
+  font-weight: 600;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 1.2px #ffffff;
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 6px rgba(255, 255, 255, 0.95),
+     0px 0px 12px rgba(255, 255, 255, 0.85);
 }
 
-.promo-icon-{{ block.id }} { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; }
+.promo-icon-{{ block.id }} { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0px 0px 2px #ffffff) drop-shadow(0px 0px 4px #ffffff); }
 
 .promo-btn-{{ block.id }} { 
   display: inline-block; 
   padding: 14px 24px; 
   background-color: #F5F2ED; 
-  color: #fff; 
+  color: #121212; 
   text-decoration: none; 
   border-radius: 50px; 
   font-weight: 600; 
   font-size: 14px; 
   text-align: center; 
   width: 100%; /* Full width button on mobile */
-  transition: opacity 0.3s; 
+  transition: opacity 0.3s, transform 0.2s; 
   margin-top: 1rem; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.promo-btn-{{ block.id }}:hover { opacity: 0.85; }
+.promo-btn-{{ block.id }}:hover { opacity: 0.9; transform: translateY(-1px); }
 
 /* ==========================================
    DESKTOP CSS
