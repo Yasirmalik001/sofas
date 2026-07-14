@@ -16,13 +16,14 @@
   overflow: hidden; 
   padding: 3rem 2rem; 
   position: relative; 
+  min-height: 440px; 
   height: 100%; 
   box-sizing: border-box; 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
   text-align: center; /* Center text on mobile */
-  justify-content: space-between;
+  justify-content: flex-start;
   
   /* Apply Mobile Image */
   {% if block.settings.image_mobile != blank %}
@@ -39,7 +40,7 @@
   gap: 1.5rem; 
   z-index: 2; 
   position: relative; 
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
   align-items: center; /* Center contents */
 }
@@ -47,15 +48,6 @@
 .promo-content-{{ block.id }} .h1 { 
   margin: 0; 
   line-height: 100%; 
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1.5px #ffffff;
-  text-shadow: 
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     0px 0px 6px rgba(255, 255, 255, 0.95),
-     0px 0px 14px rgba(255, 255, 255, 0.85);
 }
 .promo-text-{{ block.id }} { 
   font-size: 14px; 
@@ -63,15 +55,6 @@
   margin: 0; 
   color: inherit; 
   font-weight: 600;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1.2px #ffffff;
-  text-shadow: 
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     0px 0px 6px rgba(255, 255, 255, 0.95),
-     0px 0px 12px rgba(255, 255, 255, 0.85);
 }
 
 .promo-features-{{ block.id }} { 
@@ -92,18 +75,9 @@
   font-size: 14px; 
   color: inherit; 
   font-weight: 600;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1.2px #ffffff;
-  text-shadow: 
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     0px 0px 6px rgba(255, 255, 255, 0.95),
-     0px 0px 12px rgba(255, 255, 255, 0.85);
 }
 
-.promo-icon-{{ block.id }} { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0px 0px 2px #ffffff) drop-shadow(0px 0px 4px #ffffff); }
+.promo-icon-{{ block.id }} { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; }
 
 .promo-btn-{{ block.id }} { 
   display: inline-block; 
@@ -133,12 +107,11 @@
     margin-block: 0px;
   }
   .promo-card-{{ block.id }} { 
-    flex-direction: row;
-    align-items: start;
-    padding: 3rem;
-    min-height: auto;
-    text-align: left;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.5rem 3rem;
+    min-height: 520px;
+    justify-content: flex-start;
     text-align: center;
     
     /* Apply Desktop Image */
@@ -149,7 +122,7 @@
 
   .promo-content-{{ block.id }} { 
     align-items: center;
-    margin: 0;
+    margin: 0 auto;
   }
   
   .promo-features-{{ block.id }} {
@@ -190,7 +163,7 @@
       </ul>
 
       {%- if block.settings.button_label != blank -%}
-        <a href="{{ block.settings.button_link | default: '#' }}" class="button button-secondary">
+        <a href="{{ block.settings.button_link | default: '#' }}" class="button button-secondary promo-btn-{{ block.id }}">
           {{ block.settings.button_label }}
         </a>
       {%- endif -%}
