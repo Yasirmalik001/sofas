@@ -492,5 +492,34 @@ svg {
     max-width: 200px;
   }
 
+}
 
+/* ==========================================
+   GLOBAL CLEAN BADGE STYLING
+   Resolves heavy/cramped badge text across cards
+========================================== */
+.badge,
+.card__badge .badge,
+.card-product-tabs__badge,
+.card-overlay-badge,
+.product__hero-badge,
+.price-discount-badge {
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  padding: 7px 16px !important;
+}
+
+@media screen and (max-width: 749px) {
+  .badge,
+  .card__badge .badge,
+  .card-product-tabs__badge,
+  .card-overlay-badge,
+  .product__hero-badge,
+  .price-discount-badge {
+    font-size: 11px !important;
+    padding: 6px 13px !important;
+    letter-spacing: 0.08em !important;
+  }
 }

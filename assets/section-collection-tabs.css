@@ -361,12 +361,13 @@
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  padding: 8px 14px;
-  border-radius: 50px;
-  font-size: 11.5px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: .01em;
+  justify-content: center;
+  padding: 7px 16px !important;
+  border-radius: 50px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.08em !important;
   white-space: nowrap;
   pointer-events: none;
   background: #1f1f1f;
@@ -905,8 +906,10 @@
   }
 
   .card-product-tabs__badge {
-    padding: 6px 10px;
-    font-size: 10.5px;
+    padding: 6px 13px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
   }
 
   .card-product-tabs__badge--top-right {
