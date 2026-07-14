@@ -80,21 +80,25 @@
 .promo-icon-{{ block.id }} { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; }
 
 .promo-btn-{{ block.id }} { 
-  display: inline-block; 
-  padding: 14px 24px; 
-  background-color: #F5F2ED; 
-  color: #121212; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.4rem; 
+  background-color: #D4B895 !important; 
+  color: #FFFFFF !important; 
+  border: 1px solid #D4B895 !important;
   text-decoration: none; 
-  border-radius: 50px; 
+  border-radius: 50px !important; 
+  font-family: var(--font-body-family);
   font-weight: 600; 
-  font-size: 14px; 
+  font-size: 1.5rem; 
+  letter-spacing: 0.1rem;
   text-align: center; 
   width: 100%; /* Full width button on mobile */
-  transition: opacity 0.3s, transform 0.2s; 
+  transition: background-color 0.3s, color 0.3s; 
   margin-top: 1rem; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: none !important;
 }
-.promo-btn-{{ block.id }}:hover { opacity: 0.9; transform: translateY(-1px); }
 
 /* ==========================================
    DESKTOP CSS
@@ -163,8 +167,8 @@
       </ul>
 
       {%- if block.settings.button_label != blank -%}
-        <a href="{{ block.settings.button_link | default: '#' }}" class="button button-secondary promo-btn-{{ block.id }}">
-          {{ block.settings.button_label }}
+        <a href="{{ block.settings.button_link | default: '#' }}" class="button hero-block-button-pill cx-promo-btn promo-btn promo-btn-{{ block.id }}">
+          <span>{{ block.settings.button_label }}</span>
         </a>
       {%- endif -%}
     </div>
