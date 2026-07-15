@@ -19,8 +19,14 @@
   min-height: 440px; 
   height: 100%; 
   box-sizing: border-box; 
-  background-size: cover; 
-  background-position: center; 
+  {%- assign bg_size = block.settings.bg_size | default: '100% auto' -%}
+  {%- assign bg_position = block.settings.bg_position | default: 'bottom center' -%}
+  {%- if bg_size == 'custom' -%}
+    background-size: {{ block.settings.bg_custom_size_mobile | default: 100 }}% auto;
+  {%- else -%}
+    background-size: {{ bg_size }};
+  {%- endif -%}
+  background-position: {{ bg_position }};
   background-repeat: no-repeat;
   text-align: center; /* Center text on mobile */
   justify-content: flex-start;
@@ -116,6 +122,12 @@
     min-height: 520px;
     justify-content: flex-start;
     text-align: center;
+    {%- if bg_size == 'custom' -%}
+      background-size: {{ block.settings.bg_custom_size_desktop | default: 100 }}% auto;
+    {%- else -%}
+      background-size: {{ bg_size }};
+    {%- endif -%}
+    background-position: {{ bg_position }};
     
     /* Apply Desktop Image */
     {% if block.settings.image != blank %}
