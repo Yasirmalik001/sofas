@@ -7,8 +7,8 @@
     transition: opacity 0.3s ease-in; 
     --border-radius: {{ section.settings.border_radius | default: 12 }}px;
     --thumb-gap: {{ section.settings.thumb_gap | default: 10 }}px;
-    --desktop-cols: {{ section.settings.desktop_columns | default: 2 }};
-    --mobile-cols: {{ section.settings.mobile_columns | default: 4 }};
+    --desktop-cols: {{ section.settings.desktop_columns | default: 4 }};
+    --mobile-cols: {{ section.settings.thumbs_per_view_mobile | default: section.settings.mobile_columns | default: 4 }};
   }
   
   /* Makes it visible once JS completes successfully */
@@ -100,15 +100,15 @@
   .swiper-gallery-main .swiper-pagination-bullet {
     width: 35px;
     height: 3px;
-    background: #ffffff;
-    opacity: 0.6;
+    background: #cccccc !important;
+    opacity: 0.8 !important;
     border-radius: 2px;
     margin: 0 4px !important;
     transition: all 0.3s ease;
   }
 .swiper-gallery-main .swiper-pagination-bullet-active {
-    background: #2B2B2B;
-    opacity: 1;
+    background: #2B2B2B !important;
+    opacity: 1 !important;
 }
 
   /* Desktop Grid Overrides */
@@ -164,7 +164,7 @@
   data-group-enabled="{{ group_enabled }}" 
   data-show-all-lightbox="{{ show_all_in_lightbox }}" 
   data-initial-color="{{ initial_color_value }}" 
-  class="product__media-gallery-wrapper desktop-{{ section.settings.desktop_layout | default: 'grid' }} mobile-{{ section.settings.mobile_layout | default: 'slider' }}"
+  class="product__media-gallery-wrapper desktop-{{ section.settings.thumbs_layout_desktop | default: section.settings.desktop_layout | default: 'grid' }} mobile-{{ section.settings.mobile_thumbnails | default: section.settings.mobile_layout | default: 'slider' }}"
 >
   <div class="gallery-master-repository">
     {%- for media in product.media -%}
