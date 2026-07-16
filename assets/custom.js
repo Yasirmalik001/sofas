@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const mmEl = timer.querySelector('.cx-time-mm');
       const ssEl = timer.querySelector('.cx-time-ss');
 
-      if(hhEl) hhEl.innerText = hours.toString().padStart(2, '0');
+    if(hhEl) hhEl.innerText = hours.toString().padStart(2, '0');
       if(mmEl) mmEl.innerText = minutes.toString().padStart(2, '0');
       if(ssEl) ssEl.innerText = seconds.toString().padStart(2, '0');
     }, 1000);

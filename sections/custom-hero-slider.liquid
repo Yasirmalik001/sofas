@@ -1,3 +1,23 @@
+{%- comment -%} Preload first slide image so it shows instantly on mobile — no colour flash {%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+  {%- assign _first_block = section.blocks | first -%}
+  {%- if _first_block.settings.mobile_image != blank -%}
+    <link rel="preload" as="image"
+      href="{{ _first_block.settings.mobile_image | image_url: width: 750 }}"
+      imagesrcset="{{ _first_block.settings.mobile_image | image_url: width: 375 }} 375w, {{ _first_block.settings.mobile_image | image_url: width: 550 }} 550w, {{ _first_block.settings.mobile_image | image_url: width: 750 }} 750w"
+      imagesizes="100vw"
+      media="(max-width: 749px)"
+    >
+  {%- elsif _first_block.settings.image != blank -%}
+    <link rel="preload" as="image"
+      href="{{ _first_block.settings.image | image_url: width: 750 }}"
+      imagesrcset="{{ _first_block.settings.image | image_url: width: 375 }} 375w, {{ _first_block.settings.image | image_url: width: 550 }} 550w, {{ _first_block.settings.image | image_url: width: 750 }} 750w"
+      imagesizes="100vw"
+      media="(max-width: 749px)"
+    >
+  {%- endif -%}
+{%- endif -%}
+
 {%- liquid
   assign padding_bottom_desktop = section.settings.desktop_height | append: 'vh'
   assign padding_bottom_mobile = section.settings.mobile_height | append: 'vh'
