@@ -95,16 +95,9 @@
     transition: opacity 0.35s ease;
   }
 
-  /* Prevent any color flash / #ccc dark box before slide image finishes loading on mobile/desktop */
+  /* Hide overlay until image finishes loading so there is no dark #ccc box before image displays */
   .custom-hero-slider__media:not(.is-loaded) .custom-hero-slider__overlay {
     opacity: 0 !important;
-  }
-  .custom-hero-slider__media:not(.is-loaded) img {
-    opacity: 0 !important;
-  }
-  .custom-hero-slider__media.is-loaded img {
-    opacity: 1;
-    transition: opacity 0.35s ease;
   }
 
   .custom-hero-slider__content-wrapper {
@@ -299,13 +292,16 @@
 
                   assign loading_strategy = 'lazy'
                   assign fetch_priority = 'auto'
+                  assign decoding_strategy = 'async'
                   if forloop.first
                     assign loading_strategy = 'eager'
                     assign fetch_priority = 'high'
+                    assign decoding_strategy = 'sync'
                   endif
                   assign onload_js = "this.closest('.custom-hero-slider__media').classList.add('is-loaded')"
                 -%}
                 {{ block.settings.image | image_url: width: 3840 | image_tag:
+                  decoding: decoding_strategy,
                   loading: loading_strategy,
                   fetchpriority: fetch_priority,
                   onload: onload_js,
@@ -318,6 +314,7 @@
 
               {%- if block.settings.mobile_image != blank -%}
                 {{ block.settings.mobile_image | image_url: width: 1100 | image_tag:
+                  decoding: decoding_strategy,
                   loading: loading_strategy,
                   fetchpriority: fetch_priority,
                   onload: onload_js,
