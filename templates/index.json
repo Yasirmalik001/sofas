@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Full_Dino_Set.png",
-            "mobile_image": "shopify://shop_images/Full_Dino_Set.png",
+            "mobile_image": "shopify://shop_images/download_11.png",
             "overlay_opacity": 30,
             "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
             "desktop_content_position": "center",
@@ -56,7 +56,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
-            "mobile_image": "shopify://shop_images/download_10_f1a81283-95fd-4aaf-85a2-80a9523cc1fa.png",
+            "mobile_image": "shopify://shop_images/download_1.webp",
             "overlay_opacity": 30,
             "color_scheme": "scheme-b2c950b1-7571-4512-9f29-8a1955f48404",
             "desktop_content_position": "center",
