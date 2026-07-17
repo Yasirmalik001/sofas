@@ -7,6 +7,29 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    {%- if template.name == 'index' -%}
+      {%- assign hero_mobile_img = images['download_11.png'] -%}
+      {%- if hero_mobile_img != blank -%}
+        <link rel="preload" as="image"
+          href="{{ hero_mobile_img | image_url: width: 750 }}"
+          imagesrcset="{{ hero_mobile_img | image_url: width: 375 }} 375w, {{ hero_mobile_img | image_url: width: 550 }} 550w, {{ hero_mobile_img | image_url: width: 750 }} 750w, {{ hero_mobile_img | image_url: width: 1100 }} 1100w"
+          imagesizes="100vw"
+          fetchpriority="high"
+          media="(max-width: 749px)"
+        >
+      {%- endif -%}
+      {%- assign hero_desktop_img = images['Full_Dino_Set.png'] -%}
+      {%- if hero_desktop_img != blank -%}
+        <link rel="preload" as="image"
+          href="{{ hero_desktop_img | image_url: width: 1780 }}"
+          imagesrcset="{{ hero_desktop_img | image_url: width: 1100 }} 1100w, {{ hero_desktop_img | image_url: width: 1500 }} 1500w, {{ hero_desktop_img | image_url: width: 1780 }} 1780w, {{ hero_desktop_img | image_url: width: 2000 }} 2000w"
+          imagesizes="100vw"
+          fetchpriority="high"
+          media="(min-width: 750px)"
+        >
+      {%- endif -%}
+    {%- endif -%}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
