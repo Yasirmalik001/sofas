@@ -62,7 +62,7 @@
   .custom-hero-slider__slide {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
   }
 
@@ -123,6 +123,14 @@
     gap: 1.5rem;
   }
 
+  .custom-hero-slider__box > :first-child {
+    margin-top: auto;
+  }
+
+  .custom-hero-slider__box > :last-child {
+    margin-bottom: auto;
+  }
+
   .custom-hero-slider__title {
     margin: 0;
     color: rgb(var(--color-foreground));
@@ -139,7 +147,9 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: auto;
+      margin-bottom: 0 !important;
+      width: 100%;
   }
 
   .custom-hero-slider .button--secondary {
