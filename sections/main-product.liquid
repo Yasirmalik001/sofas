@@ -526,15 +526,27 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'order_fabric_sample' -%}
-                <style>
-                  #OrderFabricSample-{{ block.id }}::after { display: none !important; }
-                  #OrderFabricSample-{{ block.id }}::before { display: none !important; }
-                </style>
-                <div class="product-form__buttons" style="margin-top: {{ block.settings.margin_top }}px;" {{ block.shopify_attributes }}>
-                  <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--full-width" style="background: {{ block.settings.button_color }} !important; color: white !important; border: 1px solid {{ block.settings.button_color }} !important;">
-                    {{ block.settings.button_text | default: 'Order Fabric Sample' }}
-                  </a>
-                </div>
+                {%- assign show_button = true -%}
+                {%- if block.settings.target_collection != blank -%}
+                  {%- assign show_button = false -%}
+                  {%- for col in product.collections -%}
+                    {%- if col.handle == block.settings.target_collection -%}
+                      {%- assign show_button = true -%}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+                {%- if show_button -%}
+                  <style>
+                    #OrderFabricSample-{{ block.id }}::after { display: none !important; }
+                    #OrderFabricSample-{{ block.id }}::before { display: none !important; }
+                  </style>
+                  <div class="product-form__buttons" style="margin-top: {{ block.settings.margin_top }}px;" {{ block.shopify_attributes }}>
+                    <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--full-width" style="background: {{ block.settings.button_color }} !important; color: white !important; border: 1px solid {{ block.settings.button_color }} !important;">
+                      {{ block.settings.button_text | default: 'Order Fabric Sample' }}
+                    </a>
+                  </div>
+                {%- endif -%}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -1858,6 +1870,12 @@
           "unit": "px",
           "label": "Top Spacing",
           "default": -10
+        },
+        {
+          "type": "collection",
+          "id": "target_collection",
+          "label": "Show only for this collection",
+          "info": "Leave blank to show on all products. E.g. Select 'Sofas' to only show on sofas."
         }
       ]
     },
