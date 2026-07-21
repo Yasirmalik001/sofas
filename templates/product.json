@@ -89,7 +89,7 @@
             "button_text": "Order Fabric Sample",
             "stripe_link": "https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00",
             "button_color": "#2b2b2b",
-            "target_collection": "sofas"
+            "target_collection": "all-sofas"
           }
         },
         "delivery_payment_mB6BTN": {
