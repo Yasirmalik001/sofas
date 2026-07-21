@@ -87,7 +87,7 @@
           "type": "order_fabric_sample",
           "settings": {
             "button_text": "Order Fabric Sample",
-            "stripe_link": "",
+            "stripe_link": "https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00",
             "button_color": "#635bff"
           }
         },
