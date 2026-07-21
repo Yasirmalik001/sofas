@@ -525,6 +525,12 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- when 'order_fabric_sample' -%}
+                <div class="product-form__buttons" {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--full-width" style="background-color: {{ block.settings.button_color }}; color: white; border: 1px solid {{ block.settings.button_color }}; margin-top: 1rem;">
+                    {{ block.settings.button_text | default: 'Order Fabric Sample' }}
+                  </a>
+                </div>
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -1815,6 +1821,30 @@
           "label": "Show variant images in swatches",
           "info": "Replaces color swatches with the actual variant image."
         },
+      ]
+    },
+    {
+      "type": "order_fabric_sample",
+      "name": "Order Fabric Sample",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Order Fabric Sample"
+        },
+        {
+          "type": "url",
+          "id": "stripe_link",
+          "label": "Stripe Link"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Color",
+          "default": "#635BFF"
+        }
       ]
     },
     {
