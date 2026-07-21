@@ -221,11 +221,16 @@ p {
   pointer-events: none;
 }
 
-.card-overlay-badge,
 .card-overlay-droplet,
 .card-overlay-droplet-c {
   background: var(--sl-brand-primary-light, #2B2B2B);
   color: var(--sl-brand-primary, #ffffff);
+  padding: 8px 14px;
+}
+
+.card-overlay-badge {
+  background: #C8A97E;
+  color: #ffffff;
   padding: 8px 14px;
   border-radius: 30px;
   font-family: var(--font-body-family);
