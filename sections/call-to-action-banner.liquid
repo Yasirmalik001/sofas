@@ -206,24 +206,24 @@
       -%}
       {{
         section.settings.image
-        | image_url: width: 3840
+        | image_url: width: 2000
         | image_tag:
           loading: 'lazy',
           class: desktop_image_class,
           sizes: '100vw',
-          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+          widths: '375, 550, 750, 1100, 1500, 2000'
       }}
     {%- endif -%}
 
     {%- if section.settings.mobile_image != blank -%}
       {{
         section.settings.mobile_image
-        | image_url: width: 3840
+        | image_url: width: 750
         | image_tag:
           loading: 'lazy',
           class: 'hero-background-image hero-background-image--mobile',
           sizes: '100vw',
-          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+          widths: '375, 550, 750'
       }}
     {%- endif -%}
 

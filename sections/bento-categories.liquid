@@ -173,11 +173,11 @@
           <a href="{{ block.settings.link | default: '#' }}" class="custom-bento__item" aria-label="{{ block.settings.button_label | escape }}">
             
             {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 2500 | image_tag: 
+              {{ block.settings.image | image_url: width: 750 | image_tag: 
                 loading: 'lazy', 
                 class: 'custom-bento__image', 
-                sizes: '(min-width: 750px) 50vw, 100vw', 
-                widths: '375, 550, 750, 1100, 1500, 1780' 
+                sizes: '(min-width: 750px) 25vw, 50vw', 
+                widths: '375, 550, 750' 
               }}
             {%- else -%}
               {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'custom-bento__image placeholder-svg' }}
