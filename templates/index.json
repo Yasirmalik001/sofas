@@ -29,7 +29,8 @@
             "button_style_1": "primary",
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_2": "secondary"
+            "button_style_2": "secondary",
+            "content_top_padding": 170
           }
         },
         "slide_npzN6m": {
@@ -49,7 +50,8 @@
             "button_style_1": "primary",
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_2": "secondary"
+            "button_style_2": "secondary",
+            "content_top_padding": 120
           }
         },
         "slide_YcYXPY": {
@@ -69,7 +71,8 @@
             "button_style_1": "primary",
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_2": "secondary"
+            "button_style_2": "secondary",
+            "content_top_padding": 120
           }
         }
       },
