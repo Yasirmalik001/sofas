@@ -308,7 +308,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'sereluna.css' | asset_url | stylesheet_tag }}
-    {{ 'custom.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'premium-button-hover.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'component-judgeme.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'image-protection.css' | asset_url }}" media="print" onload="this.media='all'">
