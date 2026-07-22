@@ -175,7 +175,7 @@
     }
 
     .custom-hero-slider__box {
-      padding: 0 0 2rem;
+      padding: 6rem 0 2rem;
       flex: 1;
       align-self: stretch;
       justify-content: center;
@@ -327,7 +327,7 @@
             </div>
 
             <div class="page-width custom-hero-slider__content-wrapper" style="justify-content: {{ block.settings.desktop_content_position }};">
-              <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %}; padding-top: {{ block.settings.content_top_padding }}px;">
+              <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %};">
                   {%- if block.settings.heading != blank -%}
                     <h2 class="custom-hero-slider__title {{ block.settings.heading_size }}">
                       {{ block.settings.heading }}
@@ -341,7 +341,7 @@
                   {%- endif -%}
                   
                   {%- if block.settings.button_label_1 != blank or block.settings.button_label_2 != blank -%}
-                    <div class="custom-hero-slider__buttons">
+                    <div class="custom-hero-slider__buttons" style="margin-top: {{ block.settings.content_top_padding }}px;">
                       {%- if block.settings.button_label_1 != blank -%}
                         <a {% if block.settings.button_link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_1 }}"{% endif %} 
                            class="button {% if block.settings.button_style_1 == 'secondary' %}button--secondary{% else %}button--primary{% endif %}">
@@ -597,9 +597,9 @@
           "max": 300,
           "step": 10,
           "unit": "px",
-          "label": "Content top padding (desktop)",
-          "default": 120,
-          "info": "Pushes the content down to show more of the image above."
+          "label": "Button top spacing (desktop)",
+          "default": 20,
+          "info": "Pushes only the button down, heading and text stay centered."
         }
       ]
     }
