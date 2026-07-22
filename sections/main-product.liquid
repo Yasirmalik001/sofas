@@ -572,8 +572,8 @@
                   {%- assign btn_b = btn_color | color_extract: 'blue' -%}
                   <div class="product-form__buttons fabric-sample-wrapper" style="margin-top: {{ block.settings.margin_top }}px;" {{ block.shopify_attributes }}>
                     <div class="fabric-sample-text">
-                      <strong class="fabric-sample-heading">not sure which fabric or colour to choose?</strong>
-                      <span class="fabric-sample-subtext">we've got you covered. Request a fabric swatch today to see and feel before placing your order.</span>
+                      <strong class="fabric-sample-heading">Not sure which fabric or colour to choose?</strong>
+                      <span class="fabric-sample-subtext">We've got you covered. Request a fabric swatch today to see and feel before placing your order.</span>
                     </div>
                     <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--primary fabric-sample-btn" style="--color-button: {{ btn_r }}, {{ btn_g }}, {{ btn_b }}; --color-button-text: 43, 43, 43; --alpha-button-background: 1;">
                       {{ block.settings.button_text | default: 'Order Fabric Sample' }}
