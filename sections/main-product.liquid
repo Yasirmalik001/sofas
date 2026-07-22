@@ -37,6 +37,32 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    .fabric-sample-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fabric-sample-text {
+      text-align: center;
+      color: #2B2B2B;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .fabric-sample-heading {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .fabric-sample-subtext {
+      font-size: 0.9em;
+    }
+
+    .fabric-sample-btn {
+      width: 90%;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -541,12 +567,12 @@
                   {%- assign btn_r = btn_color | color_extract: 'red' -%}
                   {%- assign btn_g = btn_color | color_extract: 'green' -%}
                   {%- assign btn_b = btn_color | color_extract: 'blue' -%}
-                  <div class="product-form__buttons" style="margin-top: {{ block.settings.margin_top }}px; display: flex; flex-direction: column; align-items: center;" {{ block.shopify_attributes }}>
-                    <div style="text-align: center; color: #2B2B2B; margin-bottom: 12px; line-height: 1.3;">
-                      <strong style="display: block; margin-bottom: 4px;">Not Sure Which Fabric or Colour to Choose?</strong>
-                      <span style="font-size: 0.9em;">we've got you covered. Request a fabric swatch today to see and feel before placing your order.</span>
+                  <div class="product-form__buttons fabric-sample-wrapper" style="margin-top: {{ block.settings.margin_top }}px;" {{ block.shopify_attributes }}>
+                    <div class="fabric-sample-text">
+                      <strong class="fabric-sample-heading">Not Sure Which Fabric or Colour to Choose?</strong>
+                      <span class="fabric-sample-subtext">we've got you covered. Request a fabric swatch today to see and feel before placing your order.</span>
                     </div>
-                    <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--primary" style="--color-button: {{ btn_r }}, {{ btn_g }}, {{ btn_b }}; --color-button-text: 255, 255, 255; --alpha-button-background: 1; width: 90%;">
+                    <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--primary fabric-sample-btn" style="--color-button: {{ btn_r }}, {{ btn_g }}, {{ btn_b }}; --color-button-text: 255, 255, 255; --alpha-button-background: 1;">
                       {{ block.settings.button_text | default: 'Order Fabric Sample' }}
                     </a>
                   </div>
