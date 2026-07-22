@@ -52,18 +52,33 @@
   .custom-hero-slider {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    display: block;
   }
 
-  .custom-hero-slider .swiper {
+  .custom-hero-slider__slides {
+    display: grid;
+    grid-template-areas: "hero";
     width: 100%;
-    height: 100%;
+    position: relative;
   }
 
   .custom-hero-slider__slide {
+    grid-area: hero;
     position: relative;
     display: flex;
     align-items: stretch;
     width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  .custom-hero-slider__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
   }
 
   .custom-hero-slider__slide::before {
@@ -98,11 +113,6 @@
     background: #000000;
     z-index: 2;
     transition: opacity 0.35s ease;
-  }
-
-  /* Hide overlay until image finishes loading so there is no dark #ccc box before image displays */
-  .custom-hero-slider__media:not(.is-loaded) .custom-hero-slider__overlay {
-    opacity: 0 !important;
   }
 
   .custom-hero-slider__content-wrapper {
@@ -189,10 +199,8 @@
     }
   }
 
-  /* Image toggling handled natively by picture element */
-
   /* Slider Controls */
-  .custom-hero-slider .swiper-custom-controls {
+  .custom-hero-slider .hero-controls {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -203,7 +211,7 @@
     gap: 20px;
   }
 
-  .custom-hero-slider .swiper-custom-arrow {
+  .custom-hero-slider .hero-arrow {
     cursor: pointer;
     width: 44px;
     height: 44px;
@@ -215,33 +223,37 @@
     justify-content: center;
     transition: all 0.2s;
     color: #fff;
+    padding: 0;
   }
-  .custom-hero-slider .swiper-custom-arrow:hover {
+  .custom-hero-slider .hero-arrow:hover {
     background: #fff;
     color: #000;
   }
-  .custom-hero-slider .swiper-custom-arrow svg {
+  .custom-hero-slider .hero-arrow svg {
     width: 20px;
     height: 20px;
     stroke: currentColor;
   }
-  .custom-hero-slider .swiper-pagination {
+  .custom-hero-slider .hero-dots {
     position: relative;
     bottom: 0;
     display: flex;
     gap: 8px;
     align-items: center;
   }
-  .custom-hero-slider .swiper-pagination-bullet {
+  .custom-hero-slider .hero-dot {
     width: 35px;
     height: 3px;
     background: #ffffff;
     opacity: 0.6;
     border-radius: 2px;
     margin: 0 !important;
+    padding: 0;
+    border: none;
+    cursor: pointer;
     transition: all 0.3s ease;
   }
-  .custom-hero-slider .swiper-pagination-bullet-active {
+  .custom-hero-slider .hero-dot.is-active {
     background: #2B2B2B;
     opacity: 1;
   }
@@ -252,167 +264,209 @@
   @media screen and (min-width: 768px) {
     .custom-hero-slider .hide-on-desktop { display: none !important; }
   }
-  /* Prevent FOUC before Swiper initializes */
-  .custom-hero-slider .swiper:not(.swiper-initialized) .swiper-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0;
-  }
-  .custom-hero-slider .swiper:not(.swiper-initialized) .swiper-slide {
-    width: 100%;
-    flex: 0 0 100%;
-  }
-  @media screen and (min-width: 750px) {
-    .custom-hero-slider .swiper:not(.swiper-initialized) .swiper-slide {
-      width: 100%;
-      flex: 0 0 100%;
-    }
-  }
 {%- endstyle -%}
 
-<slider-container class="custom-hero-slider section-{{ section.id }}-padding" data-block-id="{{ section.id }}">
-  <div class="slider-wrapper relative-container">
-    <div 
-        class="swiper js-swiper-template"
-        data-swiper-config='{
-            "autoplay": {{ section.settings.enable_autoplay | default: false }},
-            "autoplayInterval": {{ section.settings.autoplay_interval | times: 1000 | default: 3000 }},
-            "mobileSlides": 1,
-            "mobileSpacing": 0,
-            "tabletSlides": 1,
-            "desktopSlides": 1,
-            "desktopSpacing": 0,
-            "loop": true
-        }'
-    >
-      <div class="swiper-wrapper">
-        {%- for block in section.blocks -%}
-          <div class="swiper-slide custom-hero-slider__slide color-{{ block.settings.color_scheme }} gradient" {{ block.shopify_attributes }}>
-            
-            <div class="custom-hero-slider__media {% if block.settings.image == blank and block.settings.mobile_image == blank %}is-loaded{% endif %}">
-              <div class="custom-hero-slider__overlay" style="opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};"> </div>
-              
-              {%- if block.settings.image != blank -%}
-                {%- liquid
-                  assign loading_strategy = 'lazy'
-                  assign fetch_priority = 'auto'
-                  assign decoding_strategy = 'async'
-                  if forloop.first
-                    assign loading_strategy = 'eager'
-                    assign fetch_priority = 'high'
-                    assign decoding_strategy = 'sync'
-                  endif
-                  assign onload_js = "this.closest('.custom-hero-slider__media').classList.add('is-loaded')"
-                  assign fallback_img = block.settings.image | default: block.settings.mobile_image
-                -%}
-                <picture class="custom-hero-slider__picture">
-                  {%- if block.settings.mobile_image != blank -%}
-                    <source media="(max-width: 749px)" srcset="{{ block.settings.mobile_image | image_url: width: 375 }} 375w, {{ block.settings.mobile_image | image_url: width: 550 }} 550w, {{ block.settings.mobile_image | image_url: width: 750 }} 750w" sizes="100vw">
-                  {%- endif -%}
-                  {%- if block.settings.image != blank -%}
-                    <source media="(min-width: 750px)" srcset="{{ block.settings.image | image_url: width: 750 }} 750w, {{ block.settings.image | image_url: width: 1100 }} 1100w, {{ block.settings.image | image_url: width: 1500 }} 1500w, {{ block.settings.image | image_url: width: 1780 }} 1780w, {{ block.settings.image | image_url: width: 2000 }} 2000w" sizes="100vw">
-                  {%- endif -%}
-                  {{ fallback_img | image_url: width: 1500 | image_tag:
-                    decoding: decoding_strategy,
-                    loading: loading_strategy,
-                    fetchpriority: fetch_priority,
-                    onload: onload_js,
-                    class: 'custom-hero-slider__image--main',
-                    sizes: '100vw'
-                  }}
-                </picture>
-              {%- else -%}
-                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg custom-hero-slider__image--main' }}
+<hero-slider class="custom-hero-slider section-{{ section.id }}-padding" data-autoplay="{{ section.settings.enable_autoplay }}" data-interval="{{ section.settings.autoplay_interval | times: 1000 | default: 5000 }}">
+  <div class="custom-hero-slider__slides">
+    {%- for block in section.blocks -%}
+      <div class="custom-hero-slider__slide color-{{ block.settings.color_scheme }} gradient {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+        
+        <div class="custom-hero-slider__media">
+          <div class="custom-hero-slider__overlay" style="opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};"> </div>
+          
+          {%- if block.settings.image != blank -%}
+            {%- liquid
+              assign loading_strategy = 'lazy'
+              assign fetch_priority = 'low'
+              assign decoding_strategy = 'async'
+              if forloop.first
+                assign loading_strategy = 'eager'
+                assign fetch_priority = 'high'
+                assign decoding_strategy = 'sync'
+              endif
+              assign fallback_img = block.settings.image | default: block.settings.mobile_image
+            -%}
+            <picture class="custom-hero-slider__picture">
+              {%- if block.settings.mobile_image != blank -%}
+                <source media="(max-width: 749px)" srcset="{{ block.settings.mobile_image | image_url: width: 375 }} 375w, {{ block.settings.mobile_image | image_url: width: 550 }} 550w, {{ block.settings.mobile_image | image_url: width: 750 }} 750w" sizes="100vw">
               {%- endif -%}
-            </div>
+              {%- if block.settings.image != blank -%}
+                <source media="(min-width: 750px)" srcset="{{ block.settings.image | image_url: width: 750 }} 750w, {{ block.settings.image | image_url: width: 1100 }} 1100w, {{ block.settings.image | image_url: width: 1500 }} 1500w, {{ block.settings.image | image_url: width: 1780 }} 1780w, {{ block.settings.image | image_url: width: 2000 }} 2000w" sizes="100vw">
+              {%- endif -%}
+              {{ fallback_img | image_url: width: 1500 | image_tag:
+                decoding: decoding_strategy,
+                loading: loading_strategy,
+                fetchpriority: fetch_priority,
+                class: 'custom-hero-slider__image--main',
+                sizes: '100vw'
+              }}
+            </picture>
+          {%- else -%}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg custom-hero-slider__image--main' }}
+          {%- endif -%}
+        </div>
 
-            <div class="page-width custom-hero-slider__content-wrapper" style="justify-content: {{ block.settings.desktop_content_position }};">
-              <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %};">
-                  {%- if block.settings.heading != blank -%}
-                    <h2 class="custom-hero-slider__title {{ block.settings.heading_size }}">
-                      {{ block.settings.heading }}
-                    </h2>
+        <div class="page-width custom-hero-slider__content-wrapper" style="justify-content: {{ block.settings.desktop_content_position }};">
+          <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %};">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="custom-hero-slider__title {{ block.settings.heading_size }}">
+                  {{ block.settings.heading }}
+                </h2>
+              {%- endif -%}
+              
+              {%- if block.settings.text != blank -%}
+                <div class="custom-hero-slider__text">
+                  {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+              
+              {%- if block.settings.button_label_1 != blank or block.settings.button_label_2 != blank -%}
+                <div class="custom-hero-slider__buttons" style="margin-top: {{ block.settings.content_top_padding }}px;">
+                  {%- if block.settings.button_label_1 != blank -%}
+                    <a {% if block.settings.button_link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_1 }}"{% endif %} 
+                       class="button {% if block.settings.button_style_1 == 'secondary' %}button--secondary{% else %}button--primary{% endif %}">
+                      {{- block.settings.button_label_1 | escape -}}
+                    </a>
                   {%- endif -%}
                   
-                  {%- if block.settings.text != blank -%}
-                    <div class="custom-hero-slider__text">
-                      {{ block.settings.text }}
-                    </div>
+                  {%- if block.settings.button_label_2 != blank -%}
+                    <a {% if block.settings.button_link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}"{% endif %} 
+                       class="button {% if block.settings.button_style_2 == 'secondary' %}button--secondary{% else %}button--primary{% endif %}">
+                      {{- block.settings.button_label_2 | escape -}}
+                    </a>
                   {%- endif -%}
-                  
-                  {%- if block.settings.button_label_1 != blank or block.settings.button_label_2 != blank -%}
-                    <div class="custom-hero-slider__buttons" style="margin-top: {{ block.settings.content_top_padding }}px;">
-                      {%- if block.settings.button_label_1 != blank -%}
-                        <a {% if block.settings.button_link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_1 }}"{% endif %} 
-                           class="button {% if block.settings.button_style_1 == 'secondary' %}button--secondary{% else %}button--primary{% endif %}">
-                          {{- block.settings.button_label_1 | escape -}}
-                        </a>
-                      {%- endif -%}
-                      
-                      {%- if block.settings.button_label_2 != blank -%}
-                        <a {% if block.settings.button_link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}"{% endif %} 
-                           class="button {% if block.settings.button_style_2 == 'secondary' %}button--secondary{% else %}button--primary{% endif %}">
-                          {{- block.settings.button_label_2 | escape -}}
-                        </a>
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-              </div>
-            </div>
-
+                </div>
+              {%- endif -%}
           </div>
+        </div>
+
+      </div>
+    {%- endfor -%}
+  </div>
+  
+  {%- if section.blocks.size > 1 -%}
+    <div class="hero-controls">
+      <button type="button" class="hero-arrow hero-prev {% unless section.settings.mobile_arrows %}hide-on-mobile{% endunless %} {% unless section.settings.desktop_arrows %}hide-on-desktop{% endunless %}" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </button>
+      
+      <div class="hero-dots {% unless section.settings.mobile_dots %}hide-on-mobile{% endunless %} {% unless section.settings.desktop_dots %}hide-on-desktop{% endunless %}">
+        {%- for block in section.blocks -%}
+          <button type="button" class="hero-dot {% if forloop.first %}is-active{% endif %}" data-index="{{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
         {%- endfor -%}
       </div>
-      
-      <div class="swiper-custom-controls">
-        <div class="swiper-custom-prev swiper-custom-arrow 
-          {% unless section.settings.mobile_arrows %}hide-on-mobile{% endunless %} 
-          {% unless section.settings.desktop_arrows %}hide-on-desktop{% endunless %}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        </div>
         
-        <div class="swiper-pagination 
-          {% unless section.settings.mobile_dots %}hide-on-mobile{% endunless %} 
-          {% unless section.settings.desktop_dots %}hide-on-desktop{% endunless %}"></div>
-          
-        <div class="swiper-custom-next swiper-custom-arrow 
-          {% unless section.settings.mobile_arrows %}hide-on-mobile{% endunless %} 
-          {% unless section.settings.desktop_arrows %}hide-on-desktop{% endunless %}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </div>
-      </div>
-
+      <button type="button" class="hero-arrow hero-next {% unless section.settings.mobile_arrows %}hide-on-mobile{% endunless %} {% unless section.settings.desktop_arrows %}hide-on-desktop{% endunless %}" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
     </div>
-  </div>
-  <script>
-    (function() {
-      function markLoaded(img) {
-        if (!img) return;
-        var media = img.closest('.custom-hero-slider__media');
-        if (media && !media.classList.contains('is-loaded')) {
-          media.classList.add('is-loaded');
-        }
+  {%- endif -%}
+</hero-slider>
+
+<script>
+  if (!customElements.get('hero-slider')) {
+    class HeroSlider extends HTMLElement {
+      constructor() {
+        super();
+        this.slides = Array.from(this.querySelectorAll('.custom-hero-slider__slide'));
+        this.dots = Array.from(this.querySelectorAll('.hero-dot'));
+        this.prevBtn = this.querySelector('.hero-prev');
+        this.nextBtn = this.querySelector('.hero-next');
+        this.currentIndex = 0;
+        this.timer = null;
+        this.autoplay = this.dataset.autoplay === 'true';
+        this.interval = parseInt(this.dataset.interval) || 5000;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
       }
-      function initHeroLoader() {
-        document.querySelectorAll('.custom-hero-slider__media img').forEach(function(img) {
-          if (img.complete && img.naturalHeight !== 0) {
-            markLoaded(img);
-          } else {
-            img.addEventListener('load', function() { markLoaded(img); });
-            img.addEventListener('error', function() { markLoaded(img); });
+
+      connectedCallback() {
+        if (this.slides.length <= 1) return;
+
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+
+        this.dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => this.goTo(idx));
+        });
+
+        this.addEventListener('touchstart', (e) => {
+          this.touchStartX = e.changedTouches[0].screenX;
+          this.pause();
+        }, { passive: true });
+
+        this.addEventListener('touchend', (e) => {
+          this.touchEndX = e.changedTouches[0].screenX;
+          this.handleSwipe();
+          this.play();
+        }, { passive: true });
+
+        this.addEventListener('mouseenter', () => this.pause());
+        this.addEventListener('mouseleave', () => this.play());
+
+        this.play();
+
+        // Theme customizer event support
+        document.addEventListener('shopify:block:select', (e) => {
+          const blockId = e.detail.blockId;
+          const slide = this.querySelector(`[data-shopify-editor-block*="${blockId}"]`) || this.slides.find(s => s.dataset.slideIndex == blockId);
+          if (slide) {
+            const idx = this.slides.indexOf(slide);
+            if (idx !== -1) this.goTo(idx);
           }
         });
       }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initHeroLoader);
-      } else {
-        initHeroLoader();
+
+      goTo(index) {
+        if (index < 0) index = this.slides.length - 1;
+        if (index >= this.slides.length) index = 0;
+        this.currentIndex = index;
+
+        this.slides.forEach((slide, idx) => {
+          slide.classList.toggle('is-active', idx === index);
+        });
+
+        this.dots.forEach((dot, idx) => {
+          dot.classList.toggle('is-active', idx === index);
+        });
       }
-      setTimeout(initHeroLoader, 50);
-      setTimeout(initHeroLoader, 300);
-    })();
-  </script>
-</slider-container>
+
+      next() {
+        this.goTo(this.currentIndex + 1);
+      }
+
+      prev() {
+        this.goTo(this.currentIndex - 1);
+      }
+
+      handleSwipe() {
+        const diff = this.touchStartX - this.touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) this.next();
+          else this.prev();
+        }
+      }
+
+      play() {
+        if (!this.autoplay || this.slides.length <= 1) return;
+        this.pause();
+        this.timer = setInterval(() => this.next(), this.interval);
+      }
+
+      pause() {
+        if (this.timer) {
+          clearInterval(this.timer);
+          this.timer = null;
+        }
+      }
+
+      disconnectedCallback() {
+        this.pause();
+      }
+    }
+    customElements.define('hero-slider', HeroSlider);
+  }
+</script>
 
 {% schema %}
 {
