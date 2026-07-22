@@ -41,7 +41,7 @@
     .fabric-sample-wrapper {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
     }
 
     .fabric-sample-text {
@@ -61,7 +61,10 @@
     }
 
     .fabric-sample-btn {
-      width: 90%;
+      width: 100%;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      text-align: center;
     }
   {%- endstyle -%}
 
@@ -572,7 +575,7 @@
                       <strong class="fabric-sample-heading">Not Sure Which Fabric or Colour to Choose?</strong>
                       <span class="fabric-sample-subtext">we've got you covered. Request a fabric swatch today to see and feel before placing your order.</span>
                     </div>
-                    <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--primary fabric-sample-btn" style="--color-button: {{ btn_r }}, {{ btn_g }}, {{ btn_b }}; --color-button-text: 255, 255, 255; --alpha-button-background: 1;">
+                    <a id="OrderFabricSample-{{ block.id }}" href="{{ block.settings.stripe_link | default: 'https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00' }}" target="_blank" class="button button--primary fabric-sample-btn" style="--color-button: {{ btn_r }}, {{ btn_g }}, {{ btn_b }}; --color-button-text: 43, 43, 43; --alpha-button-background: 1;">
                       {{ block.settings.button_text | default: 'Order Fabric Sample' }}
                     </a>
                   </div>
