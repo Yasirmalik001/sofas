@@ -175,7 +175,7 @@
     }
 
     .custom-hero-slider__box {
-      padding: 12rem 0 2rem;
+      padding: 0 0 2rem;
       flex: 1;
       align-self: stretch;
       justify-content: center;
@@ -327,7 +327,7 @@
             </div>
 
             <div class="page-width custom-hero-slider__content-wrapper" style="justify-content: {{ block.settings.desktop_content_position }};">
-              <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %};">
+              <div class="custom-hero-slider__box" style="text-align: {{ block.settings.desktop_text_alignment }}; align-items: {% if block.settings.desktop_text_alignment == 'left' %}flex-start{% elsif block.settings.desktop_text_alignment == 'right' %}flex-end{% else %}center{% endif %}; padding-top: {{ block.settings.content_top_padding }}px;">
                   {%- if block.settings.heading != blank -%}
                     <h2 class="custom-hero-slider__title {{ block.settings.heading_size }}">
                       {{ block.settings.heading }}
@@ -589,6 +589,17 @@
           ],
           "default": "secondary",
           "label": "Secondary button style"
+        },
+        {
+          "type": "range",
+          "id": "content_top_padding",
+          "min": 0,
+          "max": 300,
+          "step": 10,
+          "unit": "px",
+          "label": "Content top padding (desktop)",
+          "default": 120,
+          "info": "Pushes the content down to show more of the image above."
         }
       ]
     }
