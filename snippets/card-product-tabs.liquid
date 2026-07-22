@@ -111,7 +111,7 @@
                 {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
               "
               src="{{ card_product.featured_media | image_url: width: 720 }}"
-              sizes="100vw"
+              sizes="(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw"
               alt="{{ card_product.featured_media.alt | escape }}"
               class="card-product-tabs__image card-product-tabs__image--primary motion-reduce"
               {% if lazy_load == false %}loading="eager"{% else %}loading="lazy"{% endif %}
@@ -130,7 +130,7 @@
                   {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
                 "
                 src="{{ card_product.media[1] | image_url: width: 720 }}"
-                sizes="100vw"
+                sizes="(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw"
                 alt="{{ card_product.media[1].alt | escape }}"
                 class="card-product-tabs__image card-product-tabs__image--secondary motion-reduce"
                 loading="lazy"

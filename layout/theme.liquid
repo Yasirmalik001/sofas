@@ -58,7 +58,7 @@
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 
-    {{ 'smooth-scroll.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'smooth-scroll.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" media="print" onload="this.media='all'">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer="defer"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css" media="print" onload="this.media='all'">
