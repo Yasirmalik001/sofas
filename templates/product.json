@@ -83,15 +83,6 @@
             "show_gift_card_recipient": false
           }
         },
-        "order_fabric_sample_ibgjdE": {
-          "type": "order_fabric_sample",
-          "settings": {
-            "button_text": "Order Fabric Sample",
-            "stripe_link": "https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00",
-            "button_color": "#e7e1d8",
-            "target_collection": "all-sofas"
-          }
-        },
         "delivery_payment_mB6BTN": {
           "type": "delivery_payment",
           "settings": {
@@ -105,6 +96,16 @@
             "pay_with_text": "Pay with",
             "installments_text": "In installments with",
             "margin_bottom": 20
+          }
+        },
+        "order_fabric_sample_ibgjdE": {
+          "type": "order_fabric_sample",
+          "settings": {
+            "button_text": "Order Fabric Sample",
+            "stripe_link": "https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00",
+            "button_color": "#E7E1D8",
+            "margin_top": -10,
+            "target_collection": "all-sofas"
           }
         },
         "faq_blocks_NkWNgc": {
