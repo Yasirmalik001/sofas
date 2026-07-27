@@ -103,7 +103,7 @@
           "settings": {
             "button_text": "Order Fabric Sample",
             "stripe_link": "https://buy.stripe.com/dRm8wO56T4oG1OC5v82sM00",
-            "button_color": "#E7E1D8",
+            "button_color": "#e7e1d8",
             "margin_top": -10,
             "target_collection": "all-sofas"
           }
@@ -524,7 +524,7 @@
           "type": "button",
           "settings": {
             "button_label": "Learn More",
-            "button_link": "",
+            "button_link": "shopify://pages/finance",
             "button_style": "outline"
           }
         }
