@@ -3651,3 +3651,53 @@ details-disclosure>details {
     transform: translateX(100%) scaleX(0);
   }
 }@keyframes premium-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Fix alignment and size for policy pages and extra pages */
+.shopify-policy__container,
+.page-width--narrow {
+  max-width: 80rem !important;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.shopify-policy__title h1,
+.main-page-title {
+  text-align: center !important;
+  margin-bottom: 3rem;
+}
+
+.shopify-policy__body,
+.page-width--narrow .rte {
+  font-size: 1.6rem !important;
+  line-height: 1.8 !important;
+  text-align: left !important;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.shopify-policy__body h1,
+.shopify-policy__body h2,
+.shopify-policy__body h3,
+.shopify-policy__body h4,
+.page-width--narrow .rte h1,
+.page-width--narrow .rte h2,
+.page-width--narrow .rte h3,
+.page-width--narrow .rte h4 {
+  text-align: left !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  color: rgb(var(--color-foreground));
+}
+
+.shopify-policy__body p,
+.page-width--narrow .rte p {
+  text-align: left !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.shopify-policy__body ul,
+.page-width--narrow .rte ul,
+.shopify-policy__body ol,
+.page-width--narrow .rte ol {
+  text-align: left !important;
+  padding-left: 2rem;
+}

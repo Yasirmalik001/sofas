@@ -108,8 +108,8 @@
         "drawer_promo_image": "shopify://shop_images/Rectangle_226.png",
         "drawer_promo_title": "14 Days no question returns",
         "drawer_promo_text": "Enjoy complete peace of mind with our 14-day no-questions-asked return policy.",
-        "drawer_promo_btn_text": "Shop Now",
-        "drawer_promo_btn_link": ""
+        "drawer_promo_btn_text": "Learn more",
+        "drawer_promo_btn_link": "/policies/shipping-policy"
       }
     }
   },
