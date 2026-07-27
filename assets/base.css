@@ -3657,7 +3657,7 @@ details-disclosure>details {
 .page-width--narrow {
   max-width: 80rem !important;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 8rem 2rem;
 }
 
 .shopify-policy__title h1,
